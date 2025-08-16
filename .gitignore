@@ -54,3 +54,6 @@ jspm_packages/
 # Temporary folders
 tmp/
 temp/
+
+# Face detection model files (too large for git)
+public/models/
