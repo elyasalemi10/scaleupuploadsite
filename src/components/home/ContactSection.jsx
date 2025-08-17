@@ -82,8 +82,8 @@ export default function ContactSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="border-gray-200 bg-white shadow-lg">
-              <CardContent className="p-8">
+            <Card className="border-gray-200 bg-white shadow-lg h-full">
+              <CardContent className="p-8 h-full flex flex-col">
                 <h3 className="text-2xl font-bold mb-6 text-gray-900">
                   Get in Touch
                 </h3>
@@ -106,72 +106,76 @@ export default function ContactSection() {
                     <p className="text-sm text-gray-500 mt-2">Refresh the page to send another message.</p>
                   </motion.div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    {error && (
-                      <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg flex items-center gap-3">
-                        <AlertCircle className="w-5 h-5"/>
-                        <span>{error}</span>
+                  <form onSubmit={handleSubmit} className="flex-1 flex flex-col">
+                    <div className="space-y-6 flex-1">
+                      {error && (
+                        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg flex items-center gap-3">
+                          <AlertCircle className="w-5 h-5"/>
+                          <span>{error}</span>
+                        </div>
+                      )}
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div className="space-y-2">
+                          <Label htmlFor="name" className="text-gray-700">Name *</Label>
+                          <Input
+                            id="name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                            className="border-gray-300 bg-white text-gray-900 focus:ring-blue-500 focus:border-blue-500"
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="email" className="text-gray-700">Email *</Label>
+                          <Input
+                            id="email"
+                            name="email"
+                            type="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                            className="border-gray-300 bg-white text-gray-900 focus:ring-blue-500 focus:border-blue-500"
+                          />
+                        </div>
                       </div>
-                    )}
-                    <div className="grid md:grid-cols-2 gap-4">
+                      
                       <div className="space-y-2">
-                        <Label htmlFor="name" className="text-gray-700">Name *</Label>
+                        <Label htmlFor="company" className="text-gray-700">Company</Label>
                         <Input
-                          id="name"
-                          name="name"
-                          value={formData.name}
+                          id="company"
+                          name="company"
+                          value={formData.company}
                           onChange={handleChange}
-                          required
                           className="border-gray-300 bg-white text-gray-900 focus:ring-blue-500 focus:border-blue-500"
                         />
                       </div>
+                      
                       <div className="space-y-2">
-                        <Label htmlFor="email" className="text-gray-700">Email *</Label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          value={formData.email}
+                        <Label htmlFor="message" className="text-gray-700">Tell us about your AI challenges *</Label>
+                        <Textarea
+                          id="message"
+                          name="message"
+                          value={formData.message}
                           onChange={handleChange}
                           required
+                          rows={4}
                           className="border-gray-300 bg-white text-gray-900 focus:ring-blue-500 focus:border-blue-500"
+                          placeholder="Describe your business challenges, current AI usage, or specific goals..."
                         />
                       </div>
                     </div>
                     
-                    <div className="space-y-2">
-                      <Label htmlFor="company" className="text-gray-700">Company</Label>
-                      <Input
-                        id="company"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleChange}
-                        className="border-gray-300 bg-white text-gray-900 focus:ring-blue-500 focus:border-blue-500"
-                      />
+                    <div className="mt-6">
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="gold-button shine-button w-full flex items-center justify-center gap-2 text-lg"
+                      >
+                        <span className="text">{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+                        <Send className="w-5 h-5" />
+                      </button>
                     </div>
-                    
-                    <div className="space-y-2">
-                      <Label htmlFor="message" className="text-gray-700">Tell us about your AI challenges *</Label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        required
-                        rows={4}
-                        className="border-gray-300 bg-white text-gray-900 focus:ring-blue-500 focus:border-blue-500"
-                        placeholder="Describe your business challenges, current AI usage, or specific goals..."
-                      />
-                    </div>
-                    
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="gold-button shine-button w-full flex items-center justify-center gap-2 text-lg"
-                    >
-                      <span className="text">{isSubmitting ? 'Sending...' : 'Send Message'}</span>
-                      <Send className="w-5 h-5" />
-                    </button>
                   </form>
                 )}
               </CardContent>
