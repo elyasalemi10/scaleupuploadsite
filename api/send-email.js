@@ -1,9 +1,12 @@
-const { Resend } = require('resend');
+import { Resend } from 'resend';
 
 // Initialize Resend with environment variable
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
+  console.log('Vercel function called:', req.method);
+  console.log('RESEND_API_KEY exists:', !!process.env.RESEND_API_KEY);
+  console.log('Request body:', req.body);
   // Enable CORS
   res.setHeader('Access-Control-Allow-Credentials', true);
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -75,6 +78,12 @@ module.exports = async function handler(req, res) {
 
   } catch (error) {
     console.error('Server error:', error);
-    res.status(500).json({ error: 'Internal server error', details: error.message });
+    console.error('Error stack:', error.stack);
+    console.error('Error name:', error.name);
+    res.status(500).json({ 
+      error: 'Internal server error', 
+      details: error.message,
+      stack: error.stack 
+    });
   }
 }
