@@ -14,7 +14,7 @@ import {
 } from './face-guard-utils';
 
 interface FaceGuardEvents {
-  'faceguard:recognized': CustomEvent<{ label: string; distance: number; box: Box }>;
+  'faceguard:recognised': CustomEvent<{ label: string; distance: number; box: Box }>;
   'faceguard:unknown': CustomEvent<{ distance: number; box: Box }>;
   'faceguard:enrolled': CustomEvent<{ label: string; count: number }>;
   'faceguard:error': CustomEvent<{ message: string; error?: Error }>;
@@ -758,7 +758,7 @@ export class FaceGuardElement extends HTMLElement {
               distance: match.distance
             });
             
-            this.dispatchEvent(new CustomEvent('faceguard:recognized', {
+            this.dispatchEvent(new CustomEvent('faceguard:recognised', {
               detail: { label: match.label, distance: match.distance, box }
             }));
           } else {

@@ -21,7 +21,7 @@ export default function TrainingSection() {
     {
       icon: BookOpen,
       title: "Prompt Engineering Masterclass",
-      description: "Hands-on training to maximize AI tool effectiveness, reduce hallucinations, and create reliable AI workflows.",
+      description: "Hands-on training to maximise AI tool effectiveness, reduce hallucinations, and create reliable AI workflows.",
       duration: "2-day workshop",
       audience: "All staff levels"
     },

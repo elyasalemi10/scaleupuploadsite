@@ -14,7 +14,7 @@ export default function IndustriesSection() {
     },
     {
       title: "Manufacturing & Quality Control",
-      description: "Automated inspection, predictive maintenance, and production optimization",
+      description: "Automated inspection, predictive maintenance, and production optimisation",
       testimonial: "AI-powered quality control caught 99.2% of defects, saving $2M annually",
       author: "Mike Rodriguez, Operations Manager"
     },

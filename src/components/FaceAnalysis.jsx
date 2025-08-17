@@ -58,7 +58,7 @@ const FaceAnalysis = () => {
     }, 50); // 20 FPS for real-time
   };
 
-  // Detect faces and analyze
+  // Detect faces and analyse
   const detectFaces = async () => {
     const video = videoRef.current;
     const canvas = canvasRef.current;

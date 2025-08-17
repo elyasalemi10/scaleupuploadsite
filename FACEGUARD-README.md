@@ -5,7 +5,7 @@ A TypeScript/JavaScript Web Component for real-time face recognition with green/
 ## ✨ Features
 
 - **Real-time Face Detection**: 20-30 FPS performance at 720p
-- **Visual Authentication**: Green boxes for recognized faces, red for unknown
+- **Visual Authentication**: Green boxes for recognised faces, red for unknown
 - **Multi-user Support**: Enroll multiple users with multiple samples each
 - **Local Storage**: Data persists using IndexedDB (fallback to localStorage)
 - **Export/Import**: Backup and restore user data as JSON
@@ -54,7 +54,7 @@ curl -O https://vladmandic.github.io/face-api/model/face_recognition.json
         const faceGuard = document.querySelector('face-guard');
         
         // Listen for recognition events
-        faceGuard.addEventListener('faceguard:recognized', (e) => {
+        faceGuard.addEventListener('faceguard:recognised', (e) => {
             console.log('Recognized:', e.detail.label);
         });
         
@@ -112,7 +112,7 @@ FACEGUARD-README.md   # This file
 
 | Event | Detail | Description |
 |-------|--------|-------------|
-| `faceguard:recognized` | `{label, distance, box}` | Face recognized |
+| `faceguard:recognised` | `{label, distance, box}` | Face recognised |
 | `faceguard:unknown` | `{distance, box}` | Unknown face detected |
 | `faceguard:enrolled` | `{label, count}` | User enrolled |
 | `faceguard:error` | `{message, error}` | Error occurred |
@@ -209,14 +209,14 @@ face-guard {
 ### Custom Events
 
 ```javascript
-faceGuard.addEventListener('faceguard:recognized', (e) => {
+faceGuard.addEventListener('faceguard:recognised', (e) => {
   const { label, distance, box } = e.detail;
   
   // Custom notification
   showNotification(`Welcome back, ${label}!`);
   
   // Analytics
-  analytics.track('user_recognized', { label, confidence: 1 - distance });
+  analytics.track('user_recognised', { label, confidence: 1 - distance });
 });
 ```
 

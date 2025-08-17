@@ -21,7 +21,7 @@ export default function ProcessSection() {
       icon: TrendingUp,
       title: "Refine & Scale",
       description: "Continuous improvement, support, and team training",
-      details: "Ongoing optimization, staff training, and scaling strategies to ensure your AI investment continues to deliver value."
+      details: "Ongoing optimisation, staff training, and scaling strategies to ensure your AI investment continues to deliver value."
     }
   ];
 

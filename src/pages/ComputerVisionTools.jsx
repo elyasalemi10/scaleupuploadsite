@@ -10,7 +10,7 @@ export default function ComputerVisionTools() {
   };
 
   const features = [
-    "Detect and analyze objects, faces and text in images or video",
+    "Detect and analyse objects, faces and text in images or video",
     "Automate visual tasks like quality checks, inventory tracking, and ID scanning",
     "Real-time image/video processing with high accuracy",
     "End-to-end setup, deployment, and support provided"

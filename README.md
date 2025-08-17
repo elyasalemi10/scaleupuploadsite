@@ -84,7 +84,7 @@ The Computer Vision Tools page features a live face detection demo that:
 - Detects faces in real-time
 - Shows age, gender, and emotion analysis
 - Displays facial landmarks
-- Uses optimized detection intervals for performance
+- Uses optimised detection intervals for performance
 
 ### Model Files
 
