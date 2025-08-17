@@ -226,42 +226,38 @@ export default function ContactSection() {
               </CardContent>
             </Card>
 
-            <Card className="border-gray-200 bg-white">
-              <CardContent className="p-8">
-                <h3 className="text-xl font-bold mb-4 text-gray-900">
+            <Card className="border-gray-200 bg-white h-full">
+              <CardContent className="p-8 h-full flex flex-col">
+                <h3 className="text-xl font-bold mb-6 text-gray-900">
                   Why Implement AI in Your Business?
                 </h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <span className="text-2xl">💰</span>
-                    <div>
+                <ul className="space-y-4 flex-1">
+                  <li className="flex items-center gap-3">
+                    <span className="text-xl">💰</span>
+                    <div className="flex-1">
                       <span className="font-bold text-gray-900">Boost Efficiency & Cut Costs</span>
-                      <br />
-                      <span className="text-gray-600">Automate daily tasks to increase productivity and reduce operational overhead.</span>
+                      <p className="text-gray-600 text-sm mt-1">Automate daily tasks to increase productivity and reduce operational overhead.</p>
                     </div>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-2xl">🧠</span>
-                    <div>
+                  <li className="flex items-center gap-3">
+                    <span className="text-xl">🧠</span>
+                    <div className="flex-1">
                       <span className="font-bold text-gray-900">Make Smarter, Faster Decisions</span>
-                      <br />
-                      <span className="text-gray-600">Use data-driven insights to make confident choices that drive profitability.</span>
+                      <p className="text-gray-600 text-sm mt-1">Use data-driven insights to make confident choices that drive profitability.</p>
                     </div>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-2xl">❤️</span>
-                    <div>
+                  <li className="flex items-center gap-3">
+                    <span className="text-xl">❤️</span>
+                    <div className="flex-1">
                       <span className="font-bold text-gray-900">Elevate Customer Engagement</span>
-                      <br />
-                      <span className="text-gray-600">Deliver personalised, 24/7 service that builds loyalty and increases sales.</span>
+                      <p className="text-gray-600 text-sm mt-1">Deliver personalised, 24/7 service that builds loyalty and increases sales.</p>
                     </div>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-2xl">🏆</span>
-                    <div>
+                  <li className="flex items-center gap-3">
+                    <span className="text-xl">🏆</span>
+                    <div className="flex-1">
                       <span className="font-bold text-gray-900">Gain a Competitive Edge</span>
-                      <br />
-                      <span className="text-gray-600">Innovate faster than your rivals and secure your position as a market leader.</span>
+                      <p className="text-gray-600 text-sm mt-1">Innovate faster than your rivals and secure your position as a market leader.</p>
                     </div>
                   </li>
                 </ul>
