@@ -5,20 +5,13 @@ import { motion } from 'framer-motion';
 export default function HeroSection() {
   return (
     <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-gray-900 overflow-hidden">
-      {/* Background Video */}
+      {/* Background GIF */}
       <div className="absolute inset-0 z-0">
-        <video 
-          src="/hero.webm"
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
+        <img 
+          src="/new.gif"
+          alt="AI Background Animation"
           className="w-full h-full object-cover"
-        >
-          <source src="/hero.webm" type="video/webm" />
-          Your browser does not support the video tag.
-        </video>
+        />
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-black/60"></div>
       </div>
