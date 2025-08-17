@@ -3,6 +3,9 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
 
 export const sendContactEmail = async (formData) => {
   try {
+    console.log('Sending email with API_BASE_URL:', API_BASE_URL);
+    console.log('Full URL:', `${API_BASE_URL}/api/send-email`);
+    
     const response = await fetch(`${API_BASE_URL}/api/send-email`, {
       method: 'POST',
       headers: {
@@ -11,8 +14,16 @@ export const sendContactEmail = async (formData) => {
       body: JSON.stringify(formData),
     });
 
+    console.log('Response status:', response.status);
+    console.log('Response headers:', response.headers);
+
     if (!response.ok) {
-      const errorData = await response.json();
+      let errorData;
+      try {
+        errorData = await response.json();
+      } catch (parseError) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
       throw new Error(errorData.error || 'Failed to send email');
     }
 
