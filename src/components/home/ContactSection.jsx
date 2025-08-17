@@ -229,24 +229,40 @@ export default function ContactSection() {
             <Card className="border-gray-200 bg-white">
               <CardContent className="p-8">
                 <h3 className="text-xl font-bold mb-4 text-gray-900">
-                  Why Get in Touch?
+                  Why Implement AI in Your Business?
                 </h3>
                 <ul className="space-y-3">
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                    <span className="text-gray-600">Identify AI opportunities specific to your business</span>
+                  <li className="flex items-start gap-3">
+                    <span className="text-2xl">💰</span>
+                    <div>
+                      <span className="font-bold text-gray-900">Boost Efficiency & Cut Costs</span>
+                      <br />
+                      <span className="text-gray-600">Automate daily tasks to increase productivity and reduce operational overhead.</span>
+                    </div>
                   </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                    <span className="text-gray-600">Get expert recommendations on tools and strategies</span>
+                  <li className="flex items-start gap-3">
+                    <span className="text-2xl">🧠</span>
+                    <div>
+                      <span className="font-bold text-gray-900">Make Smarter, Faster Decisions</span>
+                      <br />
+                      <span className="text-gray-600">Use data-driven insights to make confident choices that drive profitability.</span>
+                    </div>
                   </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                    <span className="text-gray-600">Understand implementation timeline and costs</span>
+                  <li className="flex items-start gap-3">
+                    <span className="text-2xl">❤️</span>
+                    <div>
+                      <span className="font-bold text-gray-900">Elevate Customer Engagement</span>
+                      <br />
+                      <span className="text-gray-600">Deliver personalised, 24/7 service that builds loyalty and increases sales.</span>
+                    </div>
                   </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                    <span className="text-gray-600">No obligation, just valuable insights</span>
+                  <li className="flex items-start gap-3">
+                    <span className="text-2xl">🏆</span>
+                    <div>
+                      <span className="font-bold text-gray-900">Gain a Competitive Edge</span>
+                      <br />
+                      <span className="text-gray-600">Innovate faster than your rivals and secure your position as a market leader.</span>
+                    </div>
                   </li>
                 </ul>
               </CardContent>
