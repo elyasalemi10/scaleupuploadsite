@@ -55,5 +55,4 @@ jspm_packages/
 tmp/
 temp/
 
-# Face detection model files (too large for git)
-public/models/
+# Face detection model files - now included for deployment
