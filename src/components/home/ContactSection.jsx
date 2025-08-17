@@ -8,7 +8,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Phone, Mail, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { sendContactEmail } from "@/api/resend";
-import { ContactSubmission } from "@/api/entities";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -34,29 +33,16 @@ export default function ContactSection() {
     setError(null);
     
     try {
-      // Save to database
-      await ContactSubmission.create(formData);
-      
-      // Send email via Resend
-      try {
-        await sendContactEmail(formData);
-        console.log('Email sent successfully via Resend');
-      } catch (emailError) {
-        console.error('Email sending failed, trying fallback method:', emailError);
-        
-        // Fallback: Open default email client
-        const mailtoLink = `mailto:iscaleupwithai@gmail.com?subject=${encodeURIComponent(`[Scale Up AI] Contact from ${formData.name}`)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company || 'Not provided'}\n\nMessage:\n${formData.message}`)}`;
-        window.open(mailtoLink, '_blank');
-        console.log('Opened fallback email client');
-      }
+      // Send email via Resend API
+      await sendContactEmail(formData);
+      console.log('Email sent successfully via Resend');
       
       setIsSubmitted(true);
       setHasSubmittedSuccessfully(true);
-      // Don't reset the form or hide the success message - require page refresh
       setFormData({ name: '', email: '', company: '', message: '' });
-    } catch (err) {
-      console.error('Error submitting form:', err);
-      setError('There was an error submitting your message. Please try again later.');
+    } catch (emailError) {
+      console.error('Email sending failed:', emailError);
+      setError('There was an error sending your message. Please try again or contact us directly at iscaleupwithai@gmail.com');
     } finally {
       setIsSubmitting(false);
     }

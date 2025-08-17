@@ -1,5 +1,5 @@
-// API endpoint for sending emails via our backend
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
+// API endpoint for sending emails via Vercel function
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
 
 export const sendContactEmail = async (formData) => {
   try {
