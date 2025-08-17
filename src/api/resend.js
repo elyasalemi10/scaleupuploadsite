@@ -1,5 +1,5 @@
-// API endpoint for sending emails via backend
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
+// API endpoint for sending emails - uses environment variable or relative path for production
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || (import.meta.env.DEV ? 'http://localhost:3001' : '');
 
 export const sendContactEmail = async (formData) => {
   try {
