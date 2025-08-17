@@ -61,7 +61,7 @@ export default function Navigation() {
   }, [isMobileMenuOpen]);
 
   const solutionLinks = [
-    { title: 'All Services', path: createPageUrl('Solutions') },
+    { title: 'All Services', path: createPageUrl('Services') },
     { title: 'AI Voice Agent', path: createPageUrl('AIVoiceAgent') },
     { title: 'AI Sales Agent', path: createPageUrl('AISalesAssistant') },
     { title: 'Custom LLM Pipelines', path: createPageUrl('CustomLLM') },
@@ -129,7 +129,7 @@ export default function Navigation() {
                 onMouseLeave={() => setIsSolutionsDropdownOpen(false)}
             >
                 <Link
-                  to={createPageUrl('Solutions')}
+                  to={createPageUrl('Services')}
                   className={`transition-colors font-medium flex items-center gap-1 ${
                     isSolutionsActive ? 'text-blue-400' : 'text-gray-300 hover:text-blue-400'
                   }`}

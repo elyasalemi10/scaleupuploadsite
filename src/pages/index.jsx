@@ -26,7 +26,7 @@ const PAGES = {
     
     Home: Home,
     
-    Solutions: Solutions,
+    Services: Solutions,
     
     Expertise: Expertise,
     
@@ -71,6 +71,9 @@ function PagesContent() {
                 
                 <Route path="/Home" element={<Home />} />
                 
+                <Route path="/Services" element={<Solutions />} />
+                
+                {/* Redirect old Solutions URL to Services */}
                 <Route path="/Solutions" element={<Solutions />} />
                 
                 <Route path="/Expertise" element={<Expertise />} />

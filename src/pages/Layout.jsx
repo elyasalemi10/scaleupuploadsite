@@ -11,7 +11,7 @@ export default function Layout({ children, currentPageName }) {
 
   const scrollToSolution = (solutionId) => {
     // Navigate to solutions page first, then scroll
-    window.location.href = `${createPageUrl('Solutions')}#${solutionId}`;
+    window.location.href = `${createPageUrl('Services')}#${solutionId}`;
   };
 
   useEffect(() => {
