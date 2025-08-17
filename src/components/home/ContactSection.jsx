@@ -56,7 +56,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-white">
+    <section id="contact" className="py-24 pb-32 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div 
           className="text-center mb-16"
@@ -75,7 +75,7 @@ export default function ContactSection() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -230,7 +230,7 @@ export default function ContactSection() {
               </CardContent>
             </Card>
 
-            <Card className="border-gray-200 bg-white h-full">
+            <Card className="border-gray-200 bg-white shadow-lg h-full">
               <CardContent className="p-8 h-full flex flex-col">
                 <h3 className="text-xl font-bold mb-6 text-gray-900">
                   Why Implement AI in Your Business?
