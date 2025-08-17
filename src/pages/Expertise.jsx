@@ -1,11 +1,11 @@
 
 import React from 'react';
-import { Button } from "@/components/ui/button"; // Button component is no longer used for the specific CTA
+
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Shield, BookOpen, Settings, Brain, Eye, Bot, Database, Award } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
+
+import ContactSection from '../components/home/ContactSection';
 
 const consultingServices = [
     { icon: Brain, title: "Machine Learning" },
@@ -26,7 +26,7 @@ const expertiseAreas = [
         "Data Science: From data wrangling to forecasting",
         "AI Strategy & Roadmapping",
     ],
-    ctas: [{ text: "Book a consultation", primary: true }],
+
     image: "/mohamad.png"
   },
   {
@@ -40,7 +40,7 @@ const expertiseAreas = [
         "Supports ethical and socially responsible AI strategies",
         "Helps shape market entry plans with AI-driven insights",
     ],
-    ctas: [{ text: "Book a consultation", primary: true }],
+
     image: "/abdullah.png"
   },
   {
@@ -54,7 +54,7 @@ const expertiseAreas = [
         "Unlocks data-driven growth strategies",
         "Strengthens competitive resilience through innovation",
     ],
-    ctas: [{ text: "Book a consultation", primary: true }],
+
     image: "/baqir.png"
   },
   {
@@ -68,7 +68,7 @@ const expertiseAreas = [
         "Create Advanced apps using NLP and computer vision",
         "Skilled in edge computing",
     ],
-    ctas: [{ text: "Book a consultation", primary: true }],
+
     image: "/santhakumar.png"
   },
   {
@@ -82,7 +82,7 @@ const expertiseAreas = [
         "Mobile and web applications",
         "Web development",
     ],
-    ctas: [{ text: "Book a consultation", primary: true }],
+
     image: "/elyas.png"
   }
 ];
@@ -162,16 +162,7 @@ export default function Expertise() {
                         ))}
                       </div>
 
-                      {/* 4. Button - pushed to the bottom and centered */}
-                      <div className="flex flex-col sm:flex-row gap-4 pt-8 mt-auto justify-center">
-                        {area.ctas.map(cta => (
-                          <Link to={createPageUrl('Contact')} key={cta.text}>
-                            <button className="gold-button shine-button text-lg">
-                              <span className="text">{cta.text}</span>
-                            </button>
-                          </Link>
-                        ))}
-                      </div>
+
                     </CardContent>
                   </Card>
                 </div>
@@ -180,6 +171,8 @@ export default function Expertise() {
           </div>
         </div>
       </section>
+      
+      <ContactSection />
     </div>
   );
 }
