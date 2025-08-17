@@ -61,7 +61,7 @@ export default function Navigation() {
   }, [isMobileMenuOpen]);
 
   const solutionLinks = [
-    { title: 'All Solutions', path: createPageUrl('Solutions') },
+    { title: 'All Services', path: createPageUrl('Solutions') },
     { title: 'AI Voice Agent', path: createPageUrl('AIVoiceAgent') },
     { title: 'AI Sales Agent', path: createPageUrl('AISalesAssistant') },
     { title: 'Custom LLM Pipelines', path: createPageUrl('CustomLLM') },
@@ -134,7 +134,7 @@ export default function Navigation() {
                     isSolutionsActive ? 'text-blue-400' : 'text-gray-300 hover:text-blue-400'
                   }`}
                 >
-                  Solutions
+                  Services
                   <ChevronDown className={`w-4 h-4 transition-transform ${isSolutionsDropdownOpen ? 'rotate-180' : ''}`} />
                 </Link>
                 <AnimatePresence>
@@ -228,7 +228,7 @@ export default function Navigation() {
                       isSolutionsActive ? 'bg-blue-900/50 text-blue-400' : 'text-gray-300 hover:bg-gray-800'
                     }`}
                   >
-                    Solutions
+                    Services
                     <ChevronDown className={`w-5 h-5 transition-transform ${isMobileSolutionsOpen ? 'rotate-180' : ''}`} />
                   </button>
                   <AnimatePresence>
