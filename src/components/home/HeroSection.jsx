@@ -21,6 +21,21 @@ export default function HeroSection() {
 
     if (!section || !background || !overlay || !content) return;
 
+    // Ensure video is properly configured
+    if (background.tagName === 'VIDEO') {
+      background.muted = true;
+      background.playsInline = true;
+      background.preload = 'auto';
+      background.pause();
+      background.currentTime = 0;
+      
+      // Prevent any autoplay
+      background.addEventListener('loadstart', () => {
+        background.pause();
+        background.currentTime = 0;
+      });
+    }
+
     // Create scroll-triggered animation timeline
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -32,10 +47,19 @@ export default function HeroSection() {
           // Update background animation based on scroll progress
           const progress = self.progress;
           
+          // Control video playback based on scroll progress
+          if (background.tagName === 'VIDEO') {
+            const videoDuration = background.duration || 0;
+            if (videoDuration > 0) {
+              // Set video time based on scroll progress (0 to duration)
+              background.currentTime = progress * videoDuration;
+            }
+          }
+          
           // Animate background scale and position
           gsap.set(background, {
-            scale: 1 + progress * 0.3, // Zoom in as user scrolls
-            y: -progress * 100, // Parallax effect
+            scale: 1 + progress * 0.1, // Reduced zoom effect
+            y: -progress * 50, // Reduced parallax effect
           });
           
           // Animate overlay opacity for dynamic lighting
@@ -45,7 +69,7 @@ export default function HeroSection() {
           
           // Animate content with parallax
           gsap.set(content, {
-            y: -progress * 50, // Subtle parallax for text
+            y: -progress * 30, // Reduced parallax for text
           });
         }
       }
@@ -54,14 +78,21 @@ export default function HeroSection() {
     // Initial animation on page load
     gsap.fromTo(background, 
       { 
-        scale: 1.2, 
+        scale: 1.1, 
         opacity: 0 
       },
       { 
         scale: 1, 
         opacity: 1, 
         duration: 1.5, 
-        ease: "power2.out" 
+        ease: "power2.out",
+        onComplete: () => {
+          // Ensure video is paused and at start
+          if (background.tagName === 'VIDEO') {
+            background.pause();
+            background.currentTime = 0;
+          }
+        }
       }
     );
 
@@ -89,13 +120,22 @@ export default function HeroSection() {
 
   return (
     <section ref={sectionRef} className="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-gray-900 overflow-hidden">
-      {/* Background GIF */}
+      {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        <img 
+        <video 
           ref={backgroundRef}
-          src="/new.gif"
-          alt="AI Background Animation"
+          src="/hero.webm"
+          muted
+          playsInline
+          preload="auto"
           className="w-full h-full object-cover"
+          onLoadedData={() => {
+            // Pause video initially and set to first frame
+            if (backgroundRef.current) {
+              backgroundRef.current.pause();
+              backgroundRef.current.currentTime = 0;
+            }
+          }}
         />
         {/* Dark overlay for better text readability */}
         <div ref={overlayRef} className="absolute inset-0 bg-black/60"></div>
