@@ -1,22 +1,107 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { ArrowRight, Sparkles, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 export default function HeroSection() {
+  const sectionRef = useRef(null);
+  const backgroundRef = useRef(null);
+  const overlayRef = useRef(null);
+  const contentRef = useRef(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const background = backgroundRef.current;
+    const overlay = overlayRef.current;
+    const content = contentRef.current;
+
+    if (!section || !background || !overlay || !content) return;
+
+    // Create scroll-triggered animation timeline
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1, // Smooth scrubbing effect
+        onUpdate: (self) => {
+          // Update background animation based on scroll progress
+          const progress = self.progress;
+          
+          // Animate background scale and position
+          gsap.set(background, {
+            scale: 1 + progress * 0.3, // Zoom in as user scrolls
+            y: -progress * 100, // Parallax effect
+          });
+          
+          // Animate overlay opacity for dynamic lighting
+          gsap.set(overlay, {
+            opacity: 0.6 - progress * 0.2, // Lighten as user scrolls
+          });
+          
+          // Animate content with parallax
+          gsap.set(content, {
+            y: -progress * 50, // Subtle parallax for text
+          });
+        }
+      }
+    });
+
+    // Initial animation on page load
+    gsap.fromTo(background, 
+      { 
+        scale: 1.2, 
+        opacity: 0 
+      },
+      { 
+        scale: 1, 
+        opacity: 1, 
+        duration: 1.5, 
+        ease: "power2.out" 
+      }
+    );
+
+    // Animate content on load
+    gsap.fromTo(content, 
+      { 
+        y: 50, 
+        opacity: 0 
+      },
+      { 
+        y: 0, 
+        opacity: 1, 
+        duration: 1, 
+        delay: 0.3, 
+        ease: "power2.out" 
+      }
+    );
+
+    // Cleanup function
+    return () => {
+      tl.kill();
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
+
   return (
-    <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-gray-900 overflow-hidden">
+    <section ref={sectionRef} className="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-gray-900 overflow-hidden">
       {/* Background GIF */}
       <div className="absolute inset-0 z-0">
         <img 
+          ref={backgroundRef}
           src="/new.gif"
           alt="AI Background Animation"
           className="w-full h-full object-cover"
         />
         {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div ref={overlayRef} className="absolute inset-0 bg-black/60"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 z-10">
+      <div ref={contentRef} className="relative max-w-7xl mx-auto px-6 z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
             className="space-y-8"
