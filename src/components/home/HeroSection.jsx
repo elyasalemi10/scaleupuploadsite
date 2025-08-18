@@ -42,7 +42,7 @@ export default function HeroSection() {
         trigger: section,
         start: "top bottom",
         end: "bottom top",
-        scrub: 1, // Smooth scrubbing effect
+        scrub: 0.5, // Even smoother scrubbing effect
         onUpdate: (self) => {
           // Update background animation based on scroll progress
           const progress = self.progress;
@@ -50,9 +50,13 @@ export default function HeroSection() {
           // Control video playback based on scroll progress
           if (background.tagName === 'VIDEO') {
             const videoDuration = background.duration || 0;
-            if (videoDuration > 0) {
+            if (videoDuration > 0 && !isNaN(videoDuration)) {
               // Set video time based on scroll progress (0 to duration)
-              background.currentTime = progress * videoDuration;
+              const targetTime = progress * videoDuration;
+              // Only update if there's a meaningful difference to avoid stuttering
+              if (Math.abs(background.currentTime - targetTime) > 0.1) {
+                background.currentTime = targetTime;
+              }
             }
           }
           
@@ -124,7 +128,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-0">
         <video 
           ref={backgroundRef}
-          src="/hero.webm"
+          src="/new.webm"
           muted
           playsInline
           preload="auto"
