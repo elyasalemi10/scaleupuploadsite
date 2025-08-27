@@ -1,9 +1,5 @@
 import Layout from "./Layout.jsx";
 
-import SEOOptimizations from "../components/SEOOptimizations.jsx";
-import ImageOptimization from "../components/ImageOptimization.jsx";
-import InternalLinkOptimizer from "../components/InternalLinkOptimizer.jsx";
-
 import Home from "./Home";
 
 import Solutions from "./Solutions";
@@ -21,8 +17,6 @@ import CustomLLM from "./CustomLLM";
 import StaffTrainingProgram from "./StaffTrainingProgram";
 
 import ComputerVisionTools from "./ComputerVisionTools";
-
-import Blog from "./Blog";
 
 import NotFound from "./NotFound";
 
@@ -48,8 +42,6 @@ const PAGES = {
     
     ComputerVisionTools: ComputerVisionTools,
     
-    Blog: Blog,
-    
 }
 
 function _getCurrentPage(url) {
@@ -72,9 +64,6 @@ function PagesContent() {
     
     return (
         <Layout currentPageName={currentPage}>
-            <SEOOptimizations />
-            <ImageOptimization />
-            <InternalLinkOptimizer />
             <Routes>            
                 
                     <Route path="/" element={<Home />} />
@@ -100,8 +89,6 @@ function PagesContent() {
                 <Route path="/StaffTrainingProgram" element={<StaffTrainingProgram />} />
                 
                 <Route path="/ComputerVisionTools" element={<ComputerVisionTools />} />
-                
-                <Route path="/Blog" element={<Blog />} />
                 
                 {/* Catch-all route for 404 */}
                 <Route path="*" element={<NotFound />} />

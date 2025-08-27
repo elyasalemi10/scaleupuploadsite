@@ -74,22 +74,22 @@ export default function HeroSection() {
               transition={{ delay: 0.2 }}>
 
               <Sparkles className="w-4 h-4" />
-              #1 AI Agent Development — Scale Up with AI
+              From Strategy to Agents — Scale Up with AI
             </motion.div>
             
             <div className="space-y-6">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
                 <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                  Scale Up with AI Agents
+                  We help businesses choose the right AI tools
                 </span>
                 <br />
                 <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
-                  Custom LLM & Voice Solutions
+                  and build the best solution for their needs.
                 </span>
               </h1>
               
               <p className="text-lg md:text-xl text-gray-300 max-w-2xl leading-relaxed">
-                Scale up your business with expert AI agents, custom LLM pipelines, voice automation, and sales assistants. Proven AI solutions that deliver real results and boost productivity.
+                Expert AI advice backed by solid skills in LLMs, machine learning, computer vision, and prompt engineering. We build custom AI that get real results.
               </p>
             </div>
 

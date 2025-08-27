@@ -10,7 +10,7 @@ export default function SolutionsSection() {
     {
       icon: MessageSquareText,
       title: "AI Voice Agent",
-      description: "Scale up customer service with intelligent AI voice agents that handle support calls, appointment booking, and customer inquiries with natural, human-like responses 24/7.",
+      description: "Intelligent AI agents that manage customer service, appointment setting and support calls with natural, human-like responses.",
       features: [
         "Natural, flowing conversation powered by advanced LLMs",
         "24/7 customer interaction",
@@ -25,7 +25,7 @@ export default function SolutionsSection() {
     {
       icon: Zap,
       title: "AI Sales Agent", // Changed from "AI Sales Assistant" to "AI Sales Agent"
-      description: "Scale up sales performance with AI sales agents that automate lead qualification, provide real-time conversation insights, and boost deal closure rates.",
+      description: "An always-on sales sidekick that helps teams close more deals by automating tasks, analysing conversations, and offering real-time insights.",
       features: ["Real-time suggestions", "AI script generation", "Follow-up automation", "CRM syncing"],
       hasAudio: true,
       audioUrl: "https://storage.vapi.ai/77f36ca3-03eb-4f12-aadd-2b532cc86313-1754877123959-edbd6523-9e7a-45b5-ad7f-4de0d2af5031-mono.wav",
@@ -34,7 +34,7 @@ export default function SolutionsSection() {
     {
       icon: Brain,
       title: "Custom LLM Pipelines",
-      description: "Scale up operations with custom large language model pipelines for document processing, content creation, and knowledge management. End-to-end AI automation that saves time and boosts productivity.",
+      description: "Custom large language model setups built for document processing, content creation, and knowledge management — plus end-to-end automations that streamline workflows, save time, and boost productivity across your business.",
       features: [
         "Automate repetitive tasks and save hours every week",
         "Connect apps like Gmail, Slack, Notion, CRMs, and more",
@@ -45,7 +45,7 @@ export default function SolutionsSection() {
     {
       icon: Eye,
       title: "Computer Vision Tools",
-      description: "Scale up visual operations with advanced computer vision tools for quality control, inventory management, object detection, and automated inspection systems.",
+      description: "Advanced image and video processing solutions for quality control, inventory management, and automated inspection.",
       features: [
         "Detect and analyse objects, faces and text in images or video",
         "Automate visual tasks like quality checks, inventory tracking, and ID scanning",
@@ -67,11 +67,11 @@ export default function SolutionsSection() {
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-              Scale Up with AI Solutions
+              Featured AI Solutions
             </span>
           </h2>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Scale up your business with our AI agents, custom LLM pipelines, voice automation, and computer vision tools designed to boost productivity and drive growth.
+            Our proprietary AI products and custom solutions designed to solve real business challenges across industries.
           </p>
         </motion.div>
 
