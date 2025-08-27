@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FAQ_DATA, STRUCTURED_DATA_TEMPLATES } from '@/content/seoContent';
+import { FAQ_DATA, STRUCTURED_DATA_TEMPLATES } from '../content/seoContent.js';
 
 export default function FAQ() {
   const [openItems, setOpenItems] = useState(new Set());

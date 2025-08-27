@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 const SEO_CONFIG = {
   '/': {
-    title: 'Scale Up with AI | #1 AI Agent Development & Custom LLM Solutions',
+    title: 'Scale Up with AI',
     description: 'Scale up your business with AI agents, custom LLM pipelines, voice agents, sales assistants, and computer vision tools. Expert AI consulting and implementation services.',
     keywords: 'scale up with ai, scale up, scale up ai, scale up agent, scale up ai agent, ai voice agent, ai sales agent, custom llm, ai automation, ai consulting, machine learning, computer vision, artificial intelligence business solutions',
     type: 'website'
