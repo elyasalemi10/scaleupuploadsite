@@ -1,6 +1,8 @@
 import Layout from "./Layout.jsx";
 
-// import SEO from "../components/SEO.jsx";
+import SEOOptimizations from "../components/SEOOptimizations.jsx";
+import ImageOptimization from "../components/ImageOptimization.jsx";
+import InternalLinkOptimizer from "../components/InternalLinkOptimizer.jsx";
 
 import Home from "./Home";
 
@@ -70,7 +72,9 @@ function PagesContent() {
     
     return (
         <Layout currentPageName={currentPage}>
-            {/* <SEO /> */}
+            <SEOOptimizations />
+            <ImageOptimization />
+            <InternalLinkOptimizer />
             <Routes>            
                 
                     <Route path="/" element={<Home />} />

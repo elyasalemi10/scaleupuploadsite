@@ -3,6 +3,7 @@ Allow: /
 
 # Sitemaps
 Sitemap: https://scaleupai.com/sitemap.xml
+Sitemap: https://scaleupai.com/sitemap-images.xml
 
 # Disallow admin/internal pages (if any)
 Disallow: /admin/
