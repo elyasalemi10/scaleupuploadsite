@@ -5,6 +5,13 @@
     <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Scale Up AI</title>
+    
+    <!-- Preconnect to improve performance -->
+    <link rel="preconnect" href="https://app.cal.com" />
+    
+    <!-- Defer CSS to improve render blocking -->
+    <link rel="preload" href="/src/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="/src/index.css" /></noscript>
 
   </head>
   <body>

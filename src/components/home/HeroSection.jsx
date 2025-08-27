@@ -56,7 +56,16 @@ export default function HeroSection() {
           playsInline
           preload="auto"
           className="w-full h-full object-cover"
-        />
+          aria-label="Background video showing AI technology"
+        >
+          <track 
+            kind="captions" 
+            src="/hero-captions.vtt" 
+            srcLang="en" 
+            label="English captions"
+            default
+          />
+        </video>
       </div>
 
       <div ref={contentRef} className="relative max-w-7xl mx-auto px-6 z-10">

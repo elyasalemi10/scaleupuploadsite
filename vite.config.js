@@ -22,6 +22,20 @@ export default defineConfig({
     },
   },
   build: {
-    target: 'es2020'
+    target: 'es2020',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          animations: ['framer-motion', 'gsap'],
+          ui: ['lucide-react']
+        }
+      }
+    }
+  },
+  preview: {
+    headers: {
+      'Cache-Control': 'public, max-age=31536000'
+    }
   }
 }) 

@@ -102,7 +102,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between">
           <Link to={createPageUrl('Home')} className="flex items-center gap-3">
             <img 
-              src="/navbar_logo.png"
+              src="/navbar_logo_optimized.png"
               alt="Scale Up AI Logo"
               className="h-10 w-auto object-contain"
             />
@@ -193,6 +193,7 @@ export default function Navigation() {
             className="md:hidden p-2 text-gray-300"
             onClick={toggleMobileMenu}
             type="button"
+            aria-label="Toggle mobile menu"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -224,6 +225,7 @@ export default function Navigation() {
                   <button
                     onClick={toggleMobileSolutions}
                     type="button"
+                    aria-label="Toggle services submenu"
                     className={`flex justify-between items-center w-full text-left py-3 font-medium text-lg rounded-md px-4 ${
                       isSolutionsActive ? 'bg-blue-900/50 text-blue-400' : 'text-gray-300 hover:bg-gray-800'
                     }`}

@@ -346,7 +346,14 @@ export default function MacWindow({ title = "AI Training Portal - ScaleupwithAI"
                     <span>Step {currentStep + 1} of {totalSteps} • Lesson {currentLesson + 1}</span>
                     <span>{Math.round(((currentLesson * lessons[0].steps.length + currentStep + 1) / (lessons.length * lessons[0].steps.length)) * 100)}% Complete</span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div 
+                    className="w-full bg-gray-200 rounded-full h-2"
+                    role="progressbar"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow={Math.round(((currentLesson * lessons[0].steps.length + currentStep + 1) / (lessons.length * lessons[0].steps.length)) * 100)}
+                    aria-label="Training progress"
+                  >
                     <motion.div 
                       className="bg-blue-600 h-2 rounded-full"
                       initial={{ width: 0 }}

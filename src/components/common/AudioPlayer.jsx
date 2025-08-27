@@ -63,8 +63,9 @@ export default function AudioPlayer({ audioUrl, title, isCompact = false }) {
           onClick={togglePlay}
           variant="outline"
           size="sm"
-          className="w-8 h-8 rounded-full p-0 border-gray-300 text-gray-600 flex items-center justify-center"
+          className="w-10 h-10 rounded-full p-0 border-gray-300 text-gray-600 flex items-center justify-center"
           type="button"
+          aria-label={isPlaying ? 'Pause audio' : 'Play audio'}
         >
           {isPlaying ? <Pause className="w-3 h-3" /> : <Play className="w-3 h-3 ml-0.5" />}
         </Button>
@@ -76,6 +77,11 @@ export default function AudioPlayer({ audioUrl, title, isCompact = false }) {
             onClick={handleSeek}
             onTouchStart={handleSeek} // Add touch event for mobile
             type="button"
+            aria-label="Audio progress bar - click to seek"
+            role="slider"
+            aria-valuemin="0"
+            aria-valuemax={duration || 100}
+            aria-valuenow={currentTime || 0}
           >
             <div 
               className="h-full bg-blue-500 rounded-full"
@@ -99,6 +105,7 @@ export default function AudioPlayer({ audioUrl, title, isCompact = false }) {
           size="sm"
           className="border-gray-300 text-gray-600 hover:bg-gray-200"
           type="button"
+          aria-label={isPlaying ? 'Pause audio' : 'Play audio'}
         >
           {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
         </Button>
@@ -112,6 +119,11 @@ export default function AudioPlayer({ audioUrl, title, isCompact = false }) {
               onClick={handleSeek}
               onTouchStart={handleSeek} // Add touch event for mobile
               type="button"
+              aria-label="Audio progress bar - click to seek"
+              role="slider"
+              aria-valuemin="0"
+              aria-valuemax={duration || 100}
+              aria-valuenow={currentTime || 0}
             >
               <div 
                 className="h-full bg-blue-500 rounded-full"

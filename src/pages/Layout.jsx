@@ -42,7 +42,7 @@ export default function Layout({ children, currentPageName }) {
           color: #000000;
           background-image: linear-gradient(180deg, #f6e27a 20%, #cb9b51 80%);
           font-weight: bold;
-          padding: 12px 24px;
+          padding: 16px 32px;
           border-radius: 8px;
           margin: 5px;
           border-width: 0;
@@ -56,6 +56,8 @@ export default function Layout({ children, currentPageName }) {
           position: relative;
           overflow: hidden;
           cursor: pointer;
+          min-height: 44px;
+          min-width: 44px;
         }
 
         .shine-button {
@@ -97,12 +99,12 @@ export default function Layout({ children, currentPageName }) {
               <div className="md:col-span-2">
                 <div className="flex items-center gap-3 mb-4">
                   <img 
-                    src="/navbar_logo.png"
+                    src="/navbar_logo_optimized.png"
                     alt="Scale Up AI Logo"
                     className="h-8 w-auto object-contain"
                   />
                 </div>
-                <p className="text-gray-400 mb-6 max-w-md">
+                <p className="text-gray-300 mb-6 max-w-md">
                   From Strategy to Agents — Scale Up with AI. Expert consulting for businesses ready to harness the power of artificial intelligence.
                 </p>
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
@@ -169,10 +171,10 @@ export default function Layout({ children, currentPageName }) {
             </div>
             
             <div className="border-t border-gray-700 pt-8 mt-12 flex flex-col md:flex-row justify-between items-center">
-              <p className="text-gray-500 text-sm">
+              <p className="text-gray-400 text-sm">
                 © 2025 ScaleupwithAI. All rights reserved.
               </p>
-              <div className="flex items-center gap-2 text-sm text-gray-500 mt-4 md:mt-0">
+              <div className="flex items-center gap-2 text-sm text-gray-400 mt-4 md:mt-0">
                 <MapPin className="w-4 h-4" />
                 <span>Level 19, 263 William St, Melbourne 3000</span>
               </div>
