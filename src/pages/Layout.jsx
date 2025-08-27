@@ -103,7 +103,7 @@ export default function Layout({ children, currentPageName }) {
                   />
                 </div>
                 <p className="text-gray-400 mb-6 max-w-md">
-                  From Strategy to Agents — Scale Up with AI. Expert consulting for businesses ready to harness the power of artificial intelligence.
+                  Scale up your business with AI agents, custom LLM solutions, voice automation, and expert AI consulting. Transform operations with artificial intelligence.
                 </p>
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                   <div className="flex items-center gap-2 text-sm">

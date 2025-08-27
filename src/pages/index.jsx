@@ -18,6 +18,8 @@ import StaffTrainingProgram from "./StaffTrainingProgram";
 
 import ComputerVisionTools from "./ComputerVisionTools";
 
+import Blog from "./Blog";
+
 import NotFound from "./NotFound";
 
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
@@ -41,6 +43,8 @@ const PAGES = {
     StaffTrainingProgram: StaffTrainingProgram,
     
     ComputerVisionTools: ComputerVisionTools,
+    
+    Blog: Blog,
     
 }
 
@@ -89,6 +93,8 @@ function PagesContent() {
                 <Route path="/StaffTrainingProgram" element={<StaffTrainingProgram />} />
                 
                 <Route path="/ComputerVisionTools" element={<ComputerVisionTools />} />
+                
+                <Route path="/Blog" element={<Blog />} />
                 
                 {/* Catch-all route for 404 */}
                 <Route path="*" element={<NotFound />} />

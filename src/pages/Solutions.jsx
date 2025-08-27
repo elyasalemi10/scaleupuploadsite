@@ -194,7 +194,7 @@ export default function Solutions() {
                             {solution.image ? (
                                 <img 
                                     src={solution.image}
-                                    alt={solution.title}
+                                    alt={`${solution.title} - Scale Up with AI Solutions`}
                                     className="w-full h-auto rounded-2xl"
                                 />
                             ) : (

@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "server": "node server.js",
     "dev:full": "concurrently \"npm run server\" \"npm run dev\"",
-    "download-models": "node download-models.js"
+    "download-models": "node download-models.js",
+    "build:seo": "vite build && npm run generate:sitemap",
+    "generate:sitemap": "node scripts/generate-sitemap.js"
   },
   "dependencies": {
     "@base44/sdk": "^0.1.2",

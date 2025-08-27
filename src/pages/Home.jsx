@@ -29,6 +29,7 @@ import HeroSection from '../components/home/HeroSection';
 import ProcessSection from '../components/home/ProcessSection';
 import SolutionsSection from '../components/home/SolutionsSection';
 import ContactSection from '../components/home/ContactSection';
+import FAQ from '../components/FAQ';
 
 export default function Home() {
   return (
@@ -38,6 +39,7 @@ export default function Home() {
         <HeroSection />
         <ProcessSection />
         <SolutionsSection />
+        <FAQ />
         <ContactSection />
       </main>
       
