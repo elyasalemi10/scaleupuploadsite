@@ -8,10 +8,19 @@
     
     <!-- Preconnect to improve performance -->
     <link rel="preconnect" href="https://app.cal.com" />
+    <link rel="preconnect" href="https://storage.vapi.ai" />
+    
+    <!-- Resource hints for better mobile performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
     
     <!-- Defer CSS to improve render blocking -->
     <link rel="preload" href="/src/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="/src/index.css" /></noscript>
+    
+    <!-- Optimize for mobile viewport -->
+    <meta name="theme-color" content="#1f2937" />
+    <meta name="mobile-web-app-capable" content="yes" />
 
   </head>
   <body>

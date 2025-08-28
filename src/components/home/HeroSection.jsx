@@ -54,9 +54,13 @@ export default function HeroSection() {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           className="w-full h-full object-cover"
           aria-label="Background video showing AI technology"
+          style={{
+            willChange: 'transform',
+            transform: 'translateZ(0)'
+          }}
         >
           <track 
             kind="captions" 

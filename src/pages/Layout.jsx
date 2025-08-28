@@ -98,11 +98,15 @@ export default function Layout({ children, currentPageName }) {
             <div className="grid md:grid-cols-4 gap-8">
               <div className="md:col-span-2">
                 <div className="flex items-center gap-3 mb-4">
-                  <img 
-                    src="/navbar_logo_optimized.png"
-                    alt="Scale Up AI Logo"
-                    className="h-8 w-auto object-contain"
-                  />
+                  <picture>
+                    <source media="(max-width: 768px)" srcSet="/navbar_logo_mobile.png" />
+                    <img 
+                      src="/navbar_logo_optimized.png"
+                      alt="Scale Up AI Logo"
+                      className="h-8 w-auto object-contain"
+                      loading="lazy"
+                    />
+                  </picture>
                 </div>
                 <p className="text-gray-300 mb-6 max-w-md">
                   From Strategy to Agents — Scale Up with AI. Expert consulting for businesses ready to harness the power of artificial intelligence.
