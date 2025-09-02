@@ -67,7 +67,6 @@ export default function HeroSection() {
             src="/hero-captions.vtt" 
             srcLang="en" 
             label="English captions"
-            default
           />
         </video>
       </div>
