@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 
 export default function HeroSection() {
+  // Version: 2.0 - Captions completely removed
   const backgroundRef = useRef(null);
   const contentRef = useRef(null);
 

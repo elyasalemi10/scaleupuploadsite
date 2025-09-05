@@ -2,8 +2,9 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
-  "installCommand": "npm install",
+  "installCommand": "npm ci --only=production",
   "devCommand": "npm run dev",
+  "cleanUrls": true,
   "functions": {
     "api/send-email.js": {
       "runtime": "@vercel/node"
