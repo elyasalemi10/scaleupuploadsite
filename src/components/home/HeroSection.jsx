@@ -62,12 +62,6 @@ export default function HeroSection() {
             transform: 'translateZ(0)'
           }}
         >
-          <track 
-            kind="captions" 
-            src="/hero-captions.vtt" 
-            srcLang="en" 
-            label="English captions"
-          />
         </video>
       </div>
 

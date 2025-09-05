@@ -156,3 +156,25 @@ button:focus-visible {
     @apply bg-background text-foreground;
   }
 }
+
+/* Hide video captions/subtitles completely */
+video::cue {
+  display: none !important;
+}
+
+video::-webkit-media-text-track-display {
+  display: none !important;
+}
+
+video::-webkit-media-text-track-container {
+  display: none !important;
+}
+
+/* Additional caption hiding for all browsers */
+.video-js .vjs-text-track-display {
+  display: none !important;
+}
+
+video[data-setup] .vjs-text-track-display {
+  display: none !important;
+}
