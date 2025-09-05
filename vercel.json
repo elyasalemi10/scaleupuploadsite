@@ -6,7 +6,7 @@
   "devCommand": "npm run dev",
   "functions": {
     "api/send-email.js": {
-      "runtime": "nodejs20.x"
+      "runtime": "@vercel/node"
     }
   },
   "headers": [
