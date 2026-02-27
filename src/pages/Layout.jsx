@@ -132,32 +132,18 @@ export default function Layout({ children, currentPageName }) {
                     </Link>
                   </li>
                   <li>
-                    <button 
-                      onClick={() => scrollToSolution('ai-voice-agent')}
-                      className="hover:text-blue-400 transition-colors text-left"
-                    >
+                    <Link to={createPageUrl('AIVoiceAgent')} className="hover:text-blue-400 transition-colors">
                       AI Voice Agent
-                    </button>
+                    </Link>
                   </li>
                   <li>
-                    <button 
-                      onClick={() => scrollToSolution('ai-sales-agent')}
-                      className="hover:text-blue-400 transition-colors text-left"
-                    >
+                    <Link to={createPageUrl('AISalesAssistant')} className="hover:text-blue-400 transition-colors">
                       AI Sales Agent
-                    </button>
+                    </Link>
                   </li>
                   <li>
-                    <button 
-                      onClick={() => scrollToSolution('custom-llm')}
-                      className="hover:text-blue-400 transition-colors text-left"
-                    >
-                      Custom AI Solutions
-                    </button>
-                  </li>
-                  <li>
-                    <Link to={createPageUrl('Expertise')} className="hover:text-blue-400 transition-colors">
-                      Staff Training
+                    <Link to={createPageUrl('AIAssistant')} className="hover:text-blue-400 transition-colors">
+                      AI Assistant
                     </Link>
                   </li>
                 </ul>

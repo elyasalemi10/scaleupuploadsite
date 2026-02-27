@@ -3,6 +3,8 @@ import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { MessageSquareText, Zap, Brain, Shield, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { createPageUrl } from '@/utils';
 import AudioPlayer from '../common/AudioPlayer';
 
 export default function SolutionsSection() {
@@ -20,16 +22,18 @@ export default function SolutionsSection() {
       ],
       hasAudio: true,
       audioUrl: "https://storage.vapi.ai/6f691d1c-62e3-4ed2-a38f-a10e728608c2-1754876493577-bfc84970-e814-4824-9889-3630eba7fab6-mono.wav",
-      audioTitle: "Demo"
+      audioTitle: "Demo",
+      pageUrl: createPageUrl('AIVoiceAgent')
     },
     {
       icon: Zap,
-      title: "AI Sales Agent", // Changed from "AI Sales Assistant" to "AI Sales Agent"
+      title: "AI Sales Agent",
       description: "An always-on sales sidekick that helps teams close more deals by automating tasks, analysing conversations, and offering real-time insights.",
       features: ["Real-time suggestions", "AI script generation", "Follow-up automation", "CRM syncing"],
       hasAudio: true,
       audioUrl: "https://storage.vapi.ai/77f36ca3-03eb-4f12-aadd-2b532cc86313-1754877123959-edbd6523-9e7a-45b5-ad7f-4de0d2af5031-mono.wav",
-      audioTitle: "Demo"
+      audioTitle: "Demo",
+      pageUrl: createPageUrl('AISalesAssistant')
     },
     {
       icon: Brain,
@@ -41,6 +45,7 @@ export default function SolutionsSection() {
         "Custom automations for lead generation, follow-ups, and support",
         "Full setup, testing, and support handled for you"
       ],
+      pageUrl: createPageUrl('CustomLLM')
     },
     {
       icon: Shield,
@@ -52,6 +57,7 @@ export default function SolutionsSection() {
         "Industry-specific training with structured enterprise logic",
         "Controlled architecture with granular access controls and SSO integration"
       ],
+      pageUrl: createPageUrl('AIAssistant')
     }
   ];
 
@@ -89,46 +95,48 @@ export default function SolutionsSection() {
                 transition: { duration: 0.2 }
               }}
             >
-              <Card className="h-full border-gray-700 bg-gray-800 shadow-lg transition-all duration-300 group overflow-hidden w-full">
-                <CardContent className="p-4 sm:p-6 lg:p-8 w-full">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                      <solution.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+              <Link to={solution.pageUrl} className="block h-full">
+                <Card className="h-full border-gray-700 bg-gray-800 shadow-lg transition-all duration-300 group overflow-hidden w-full cursor-pointer hover:border-blue-500/50">
+                  <CardContent className="p-4 sm:p-6 lg:p-8 w-full">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                        <solution.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                      </div>
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between flex-1 gap-y-2 sm:gap-y-0">
+                        <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                          {solution.title}
+                        </h3>
+                        {solution.hasAudio && (
+                          <div className="flex items-center gap-2 flex-shrink-0" onClick={(e) => e.preventDefault()}>
+                            <span className="text-sm text-gray-400">Demo</span>
+                            <AudioPlayer 
+                              audioUrl={solution.audioUrl}
+                              title={solution.audioTitle}
+                              isCompact={true}
+                            />
+                          </div>
+                        )}
+                      </div>
                     </div>
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between flex-1 gap-y-2 sm:gap-y-0">
-                      <h3 className="text-xl sm:text-2xl font-bold text-white">
-                        {solution.title}
-                      </h3>
-                      {solution.hasAudio && (
-                        <div className="flex items-center gap-2 flex-shrink-0">
-                          <span className="text-sm text-gray-400">Demo</span>
-                          <AudioPlayer 
-                            audioUrl={solution.audioUrl}
-                            title={solution.audioTitle}
-                            isCompact={true}
-                          />
-                        </div>
-                      )}
+                    
+                    <p className="text-gray-300 mb-6 leading-relaxed text-sm sm:text-base">
+                      {solution.description}
+                    </p>
+                    
+                    <div className="space-y-2">
+                      <h4 className="font-semibold text-gray-200 mb-3 text-sm sm:text-base">Key Features:</h4>
+                      <div className="space-y-3">
+                        {solution.features.map((feature, idx) => (
+                          <div key={idx} className="flex items-start gap-3">
+                            <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                            <span className="text-gray-300 text-sm sm:text-base">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                  
-                  <p className="text-gray-300 mb-6 leading-relaxed text-sm sm:text-base">
-                    {solution.description}
-                  </p>
-                  
-                  <div className="space-y-2">
-                    <h4 className="font-semibold text-gray-200 mb-3 text-sm sm:text-base">Key Features:</h4>
-                    <div className="space-y-3">
-                      {solution.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-start gap-3">
-                          <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                          <span className="text-gray-300 text-sm sm:text-base">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </Link>
             </motion.div>
           ))}
         </div>
