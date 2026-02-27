@@ -5,6 +5,9 @@
   "installCommand": "npm ci",
   "devCommand": "npm run dev",
   "cleanUrls": true,
+  "rewrites": [
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
