@@ -66,7 +66,7 @@ export default function Navigation() {
     { title: 'AI Sales Agent', path: createPageUrl('AISalesAssistant') },
     { title: 'Custom LLM Pipelines', path: createPageUrl('CustomLLM') },
     { title: 'Staff Training Program', path: createPageUrl('StaffTrainingProgram') },
-    { title: 'Computer Vision Tools', path: createPageUrl('ComputerVisionTools') }
+    { title: 'AI Assistant', path: createPageUrl('AIAssistant') }
   ];
   const solutionPaths = solutionLinks.map(link => link.path);
   const isSolutionsActive = solutionPaths.includes(location.pathname);

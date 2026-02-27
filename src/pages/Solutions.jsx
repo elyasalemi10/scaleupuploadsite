@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle, ArrowRight, Sparkles, MessageSquareText, Zap, Brain, BookOpen, Eye } from 'lucide-react';
+import { CheckCircle, ArrowRight, Sparkles, MessageSquareText, Zap, Brain, BookOpen, Shield } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
@@ -79,19 +79,19 @@ const solutions = [
     pageUrl: createPageUrl('StaffTrainingProgram')
   },
   {
-    id: 'computer-vision-tools',
-    icon: Eye,
-    title: "Computer Vision Tools",
-    description: "Advanced image and video processing solutions for quality control, inventory management, and automated inspection.",
+    id: 'ai-assistant',
+    icon: Shield,
+    title: "AI Assistant",
+    description: "A private AI assistant trained for your business. Built for control, designed for growth — a secure AI layer that learns your documents, workflows, and internal systems while keeping your data strictly within your control.",
     features: [
-      "Detect and analyse objects, faces and text in images or video",
-      "Automate visual tasks like quality checks, inventory tracking, and ID scanning",
-      "Real-time image/video processing with high accuracy",
-      "End-to-end setup, deployment, and support provided"
+      "Private by design — your data stays yours, never leaked into public models",
+      "Learns your documents, workflows, financial structure, and sales patterns",
+      "Industry-specific training with structured enterprise logic",
+      "Controlled architecture with granular access controls and SSO integration"
     ],
-    ctas: [{ text: "Explore Computer Vision", primary: true }],
-    image: "/computer_vision_tools_light.png",
-    pageUrl: createPageUrl('ComputerVisionTools')
+    ctas: [{ text: "Request Private Access", primary: true }],
+    image: "/ai-assistant2.png",
+    pageUrl: createPageUrl('AIAssistant')
   },
 ];
 

@@ -12,6 +12,7 @@ const AISalesAssistant = lazy(() => import("./AISalesAssistant"));
 const CustomLLM = lazy(() => import("./CustomLLM"));
 const StaffTrainingProgram = lazy(() => import("./StaffTrainingProgram"));
 const ComputerVisionTools = lazy(() => import("./ComputerVisionTools"));
+const AIAssistant = lazy(() => import("./AIAssistant"));
 const NotFound = lazy(() => import("./NotFound"));
 
 // Loading component
@@ -40,6 +41,8 @@ const PAGES = {
     StaffTrainingProgram: StaffTrainingProgram,
     
     ComputerVisionTools: ComputerVisionTools,
+    
+    AIAssistant: AIAssistant,
     
 }
 
@@ -89,6 +92,8 @@ function PagesContent() {
                     <Route path="/StaffTrainingProgram" element={<StaffTrainingProgram />} />
                     
                     <Route path="/ComputerVisionTools" element={<ComputerVisionTools />} />
+                    
+                    <Route path="/AIAssistant" element={<AIAssistant />} />
                     
                     {/* Catch-all route for 404 */}
                     <Route path="*" element={<NotFound />} />
