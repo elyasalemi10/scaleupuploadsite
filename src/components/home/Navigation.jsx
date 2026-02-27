@@ -207,7 +207,7 @@ export default function Navigation() {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div 
-              className="md:hidden absolute top-full left-0 w-full bg-gray-900 shadow-lg"
+              className="md:hidden absolute top-full left-0 w-full bg-gray-900 shadow-lg max-h-[calc(100vh-80px)] overflow-y-auto"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
