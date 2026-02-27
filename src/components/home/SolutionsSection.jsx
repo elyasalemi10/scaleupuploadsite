@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
-import { MessageSquareText, Zap, Brain, Eye, CheckCircle } from 'lucide-react';
+import { MessageSquareText, Zap, Brain, Shield, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import AudioPlayer from '../common/AudioPlayer';
 
@@ -43,14 +43,14 @@ export default function SolutionsSection() {
       ],
     },
     {
-      icon: Eye,
-      title: "Computer Vision Tools",
-      description: "Advanced image and video processing solutions for quality control, inventory management, and automated inspection.",
+      icon: Shield,
+      title: "AI Assistant",
+      description: "A private AI assistant trained for your business. Built for control, designed for growth — a secure AI layer that learns your documents, workflows, and internal systems.",
       features: [
-        "Detect and analyse objects, faces and text in images or video",
-        "Automate visual tasks like quality checks, inventory tracking, and ID scanning",
-        "Real-time image/video processing with high accuracy",
-        "End-to-end setup, deployment, and support provided"
+        "Private by design — your data stays yours, never leaked into public models",
+        "Learns your documents, workflows, financial structure, and sales patterns",
+        "Industry-specific training with structured enterprise logic",
+        "Controlled architecture with granular access controls and SSO integration"
       ],
     }
   ];
