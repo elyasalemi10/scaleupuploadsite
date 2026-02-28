@@ -1,30 +1,30 @@
-// n8n webhook for contact form submissions
-const WEBHOOK_URL = 'https://n8n.auseats.xyz/webhook-test/588e2cc3-c7b4-4e17-9861-d7e486834734';
+// API endpoint for sending emails - uses environment variable or relative path for production
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || (import.meta.env.DEV ? 'http://localhost:3001' : '');
 
 export const sendContactEmail = async (formData) => {
   try {
-    const response = await fetch(WEBHOOK_URL, {
+    const response = await fetch(`${API_BASE_URL}/api/send-email`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        name: formData.name,
-        email: formData.email,
-        company: formData.company || '',
-        message: formData.message,
-        source: 'contact_form',
-        timestamp: new Date().toISOString()
-      }),
+      body: JSON.stringify(formData),
     });
 
     if (!response.ok) {
-      throw new Error('Failed to send message');
+      let errorData;
+      try {
+        errorData = await response.json();
+      } catch (parseError) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+      throw new Error(errorData.error || 'Failed to send email');
     }
 
-    return { success: true };
+    const data = await response.json();
+    return data;
   } catch (error) {
-    console.error('Error sending contact form:', error);
+    console.error('Error sending email via backend:', error);
     throw error;
   }
 };
