@@ -1,36 +1,30 @@
-// API endpoint for sending emails - uses environment variable or relative path for production
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || (import.meta.env.DEV ? 'http://localhost:3001' : '');
+// n8n webhook for contact form submissions
+const WEBHOOK_URL = 'https://n8n.auseats.xyz/webhook-test/588e2cc3-c7b4-4e17-9861-d7e486834734';
 
 export const sendContactEmail = async (formData) => {
   try {
-    console.log('Sending email with API_BASE_URL:', API_BASE_URL);
-    console.log('Full URL:', `${API_BASE_URL}/api/send-email`);
-    
-    const response = await fetch(`${API_BASE_URL}/api/send-email`, {
+    const response = await fetch(WEBHOOK_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(formData),
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        company: formData.company || '',
+        message: formData.message,
+        source: 'contact_form',
+        timestamp: new Date().toISOString()
+      }),
     });
 
-    console.log('Response status:', response.status);
-    console.log('Response headers:', response.headers);
-
     if (!response.ok) {
-      let errorData;
-      try {
-        errorData = await response.json();
-      } catch (parseError) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-      }
-      throw new Error(errorData.error || 'Failed to send email');
+      throw new Error('Failed to send message');
     }
 
-    const data = await response.json();
-    return data;
+    return { success: true };
   } catch (error) {
-    console.error('Error sending email via backend:', error);
+    console.error('Error sending contact form:', error);
     throw error;
   }
 };
