@@ -66,7 +66,7 @@ export default function Navigation() {
     { title: 'AI Sales Agent', path: createPageUrl('AISalesAssistant') },
     { title: 'Custom LLM Pipelines', path: createPageUrl('CustomLLM') },
     { title: 'AI Assistant', path: createPageUrl('AIAssistant') },
-    { title: 'Intelligent Websites', path: createPageUrl('IntelligentWebsites') },
+    { title: 'Intelligent Websites', path: '/intelligent-websites' },
     { title: 'Staff Training Program', path: createPageUrl('StaffTrainingProgram') }
   ];
   const solutionPaths = solutionLinks.map(link => link.path);

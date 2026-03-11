@@ -45,7 +45,7 @@ const PAGES = {
     
     AIAssistant: AIAssistant,
     
-    IntelligentWebsites: IntelligentWebsites,
+    "intelligent-websites": IntelligentWebsites,
     
 }
 
@@ -98,7 +98,7 @@ function PagesContent() {
                     
                     <Route path="/AIAssistant" element={<AIAssistant />} />
                     
-                    <Route path="/IntelligentWebsites" element={<IntelligentWebsites />} />
+                    <Route path="/intelligent-websites" element={<IntelligentWebsites />} />
                     
                     {/* Catch-all route for 404 */}
                     <Route path="*" element={<NotFound />} />

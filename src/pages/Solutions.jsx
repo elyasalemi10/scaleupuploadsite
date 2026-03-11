@@ -106,7 +106,7 @@ const solutions = [
     ],
     ctas: [{ text: "Build Your Intelligent Website", primary: true }],
     image: null,
-    pageUrl: createPageUrl('IntelligentWebsites')
+    pageUrl: '/intelligent-websites'
   },
 ];
 
