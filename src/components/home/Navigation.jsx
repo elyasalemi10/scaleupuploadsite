@@ -65,8 +65,9 @@ export default function Navigation() {
     { title: 'AI Voice Agent', path: createPageUrl('AIVoiceAgent') },
     { title: 'AI Sales Agent', path: createPageUrl('AISalesAssistant') },
     { title: 'Custom LLM Pipelines', path: createPageUrl('CustomLLM') },
-    { title: 'Staff Training Program', path: createPageUrl('StaffTrainingProgram') },
-    { title: 'AI Assistant', path: createPageUrl('AIAssistant') }
+    { title: 'AI Assistant', path: createPageUrl('AIAssistant') },
+    { title: 'Intelligent Websites', path: createPageUrl('IntelligentWebsites') },
+    { title: 'Staff Training Program', path: createPageUrl('StaffTrainingProgram') }
   ];
   const solutionPaths = solutionLinks.map(link => link.path);
   const isSolutionsActive = solutionPaths.includes(location.pathname);

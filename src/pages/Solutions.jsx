@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle, ArrowRight, Sparkles, MessageSquareText, Zap, Brain, BookOpen, Shield } from 'lucide-react';
+import { CheckCircle, ArrowRight, Sparkles, MessageSquareText, Zap, Brain, BookOpen, Shield, Globe } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
@@ -92,6 +92,21 @@ const solutions = [
     ctas: [{ text: "Request Private Access", primary: true }],
     image: "/ai-assistant2.png",
     pageUrl: createPageUrl('AIAssistant')
+  },
+  {
+    id: 'intelligent-websites',
+    icon: Globe,
+    title: "Intelligent Websites",
+    description: "Websites that think, adapt, and engage. We build stunning websites with AI chatbots, AR product visualisation, smart personalisation, and powerful admin panels that transform visitors into customers.",
+    features: [
+      "AI-powered chatbots and virtual assistants embedded into your site",
+      "Augmented Reality (AR) product visualisation and interactive experiences",
+      "Intelligent search and personalised content recommendations",
+      "Real-time analytics dashboards and admin panels"
+    ],
+    ctas: [{ text: "Build Your Intelligent Website", primary: true }],
+    image: null,
+    pageUrl: createPageUrl('IntelligentWebsites')
   },
 ];
 

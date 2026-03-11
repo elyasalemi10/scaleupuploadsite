@@ -13,6 +13,7 @@ const CustomLLM = lazy(() => import("./CustomLLM"));
 const StaffTrainingProgram = lazy(() => import("./StaffTrainingProgram"));
 const ComputerVisionTools = lazy(() => import("./ComputerVisionTools"));
 const AIAssistant = lazy(() => import("./AIAssistant"));
+const IntelligentWebsites = lazy(() => import("./IntelligentWebsites"));
 const NotFound = lazy(() => import("./NotFound"));
 
 // Loading component
@@ -43,6 +44,8 @@ const PAGES = {
     ComputerVisionTools: ComputerVisionTools,
     
     AIAssistant: AIAssistant,
+    
+    IntelligentWebsites: IntelligentWebsites,
     
 }
 
@@ -94,6 +97,8 @@ function PagesContent() {
                     <Route path="/ComputerVisionTools" element={<ComputerVisionTools />} />
                     
                     <Route path="/AIAssistant" element={<AIAssistant />} />
+                    
+                    <Route path="/IntelligentWebsites" element={<IntelligentWebsites />} />
                     
                     {/* Catch-all route for 404 */}
                     <Route path="*" element={<NotFound />} />
