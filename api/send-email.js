@@ -31,13 +31,18 @@ export default async function handler(req, res) {
     const { name, email, company, message } = req.body;
 
     if (!name || !email || !message) {
-      return res.status(400).json({ 
-        error: 'Missing required fields: name, email, and message are required' 
+      return res.status(400).json({
+        error: 'Missing required fields: name, email, and message are required'
       });
     }
 
+    if (!process.env.SEND_FROM) {
+      console.error('SEND_FROM env var is not set');
+      return res.status(500).json({ error: 'Email service not configured' });
+    }
+
     const { data, error } = await resend.emails.send({
-      from: 'onboarding@resend.dev', // Use Resend's default verified domain
+      from: process.env.SEND_FROM,
       to: ['iscaleupwithai@gmail.com'], // Back to the intended recipient
       replyTo: email, // Set reply-to as the form submitter's email
       subject: `[Scale Up AI] New Contact Form Submission from ${name}`,
