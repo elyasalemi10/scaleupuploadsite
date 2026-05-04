@@ -14,6 +14,7 @@ const StaffTrainingProgram = lazy(() => import("./StaffTrainingProgram"));
 const ComputerVisionTools = lazy(() => import("./ComputerVisionTools"));
 const AIAssistant = lazy(() => import("./AIAssistant"));
 const IntelligentWebsites = lazy(() => import("./IntelligentWebsites"));
+const AdminPanel = lazy(() => import("./AdminPanel"));
 const NotFound = lazy(() => import("./NotFound"));
 
 // Loading component
@@ -66,11 +67,20 @@ function _getCurrentPage(url) {
 function PagesContent() {
     const location = useLocation();
     const currentPage = _getCurrentPage(location.pathname);
-    
+
+    // Admin panel renders without the marketing layout (no nav, no footer)
+    if (location.pathname.toLowerCase().replace(/\/+$/, '') === '/admin') {
+        return (
+            <Suspense fallback={<PageLoader />}>
+                <AdminPanel />
+            </Suspense>
+        );
+    }
+
     return (
         <Layout currentPageName={currentPage}>
             <Suspense fallback={<PageLoader />}>
-                <Routes>            
+                <Routes>
                     
                         <Route path="/" element={<Home />} />
                     
