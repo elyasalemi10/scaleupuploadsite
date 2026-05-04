@@ -43,7 +43,7 @@ export default async function handler(req, res) {
 
     const { data, error } = await resend.emails.send({
       from: process.env.SEND_FROM,
-      to: ['iscaleupwithai@gmail.com'], // Back to the intended recipient
+      to: ['info@scaleupwithai.ai'], // Contact form recipient
       replyTo: email, // Set reply-to as the form submitter's email
       subject: `[Scale Up AI] New Contact Form Submission from ${name}`,
       html: `

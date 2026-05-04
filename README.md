@@ -69,7 +69,7 @@ npm run preview
 
 ## 📧 Email Configuration
 
-The contact form uses Resend API for email delivery. The current setup sends emails to `iscaleupwithai@gmail.com`.
+The contact form uses Resend API for email delivery. The current setup sends emails to `info@scaleupwithai.ai`.
 
 ### Backend Email Server
 
@@ -126,8 +126,8 @@ No environment variables needed for basic setup. API keys are configured in the 
 
 ## 📞 Contact Information
 
-- **Phone**: (03) 84004145
-- **Email**: iscaleupwithai@gmail.com
+- **Phone**: 0426 967 982
+- **Email**: info@scaleupwithai.ai
 - **Website**: Scale Up AI
 
 ## 🚀 Deployment

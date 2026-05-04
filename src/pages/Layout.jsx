@@ -114,11 +114,11 @@ export default function Layout({ children, currentPageName }) {
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                   <div className="flex items-center gap-2 text-sm">
                     <Phone className="w-4 h-4" />
-                    <span>(03) 84004145</span>
+                    <span>0426 967 982</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <Mail className="w-4 h-4" />
-                    <span>iscaleupwithai@gmail.com</span>
+                    <span>info@scaleupwithai.ai</span>
                   </div>
                 </div>
               </div>

@@ -42,7 +42,7 @@ export default function ContactSection() {
       setFormData({ name: '', email: '', company: '', message: '' });
     } catch (emailError) {
       console.error('Email sending failed:', emailError);
-      setError('There was an error sending your message. Please try again or contact us directly at iscaleupwithai@gmail.com');
+      setError('There was an error sending your message. Please try again or contact us directly at info@scaleupwithai.ai');
     } finally {
       setIsSubmitting(false);
     }
@@ -203,7 +203,7 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900">Phone</h4>
-                      <p className="text-gray-600">(03) 84004145</p>
+                      <p className="text-gray-600">0426 967 982</p>
                     </div>
                   </div>
                   
@@ -213,7 +213,7 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900">Email</h4>
-                      <p className="text-gray-600">iscaleupwithai@gmail.com</p>
+                      <p className="text-gray-600">info@scaleupwithai.ai</p>
                     </div>
                   </div>
                   
