@@ -101,7 +101,7 @@ export default function CustomLLM() {
             
             <div className="relative hidden lg:block">
               <img 
-                src="/llm_pipelines_light.png"
+                src="/llm_pipelines_light.webp"
                 alt="Custom LLM Pipelines"
                 className="w-full h-auto rounded-2xl"
               />

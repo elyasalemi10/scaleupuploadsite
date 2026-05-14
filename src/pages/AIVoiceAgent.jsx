@@ -87,7 +87,7 @@ export default function AIVoiceAgent() {
             
             <div className="relative hidden lg:block">
               <img 
-                src="/voice_agent_light.png"
+                src="/voice_agent_light.webp"
                 alt="AI Voice Agent"
                 className="w-full h-auto rounded-2xl"
               />

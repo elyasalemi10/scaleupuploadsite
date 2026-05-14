@@ -87,7 +87,7 @@ export default function AISalesAssistant() {
             
             <div className="relative hidden lg:block">
               <img 
-                src="/sales_agent_light.png"
+                src="/sales_agent_light.webp"
                 alt="AI Sales Agent"
                 className="w-full h-auto rounded-2xl"
               />

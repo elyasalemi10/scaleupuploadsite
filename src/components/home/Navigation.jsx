@@ -102,15 +102,12 @@ export default function Navigation() {
       <nav className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link to={createPageUrl('Home')} className="flex items-center gap-3">
-            <picture>
-              <source media="(max-width: 768px)" srcSet="/navbar_logo_mobile.png" />
-              <img 
-                src="/navbar_logo_optimized.png"
-                alt="Scale Up AI Logo"
-                className="h-10 w-auto object-contain"
-                loading="eager"
-              />
-            </picture>
+            <img
+              src="/navbar_logo_optimized.webp"
+              alt="Scale Up AI Logo"
+              className="h-10 w-auto object-contain"
+              loading="eager"
+            />
           </Link>
 
           {/* Desktop Navigation */}

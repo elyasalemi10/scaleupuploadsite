@@ -26,7 +26,7 @@ const solutions = [
     hasAudio: true,
     audioTitle: "Demo",
     audioUrl: "https://storage.vapi.ai/8d7b7598-550b-42b5-a928-ef8be55efd0f-1753489874430-b75ef17b-1335-4fe1-833e-6899b9af9925-mono.wav", // Added specific audio URL for voice agent
-    image: "/voice_agent_light.png",
+    image: "/voice_agent_light.webp",
     pageUrl: createPageUrl('AIVoiceAgent')
   },
   {
@@ -45,7 +45,7 @@ const solutions = [
     hasAudio: true,
     audioTitle: "Demo",
     audioUrl: "https://storage.vapi.ai/77f36ca3-03eb-4f12-aadd-2b532cc86313-1754877123959-edbd6523-9e7a-45b5-ad7f-4de0d2af5031-mono.wav", // Updated specific audio URL for sales agent
-    image: "/sales_agent_dark.png",
+    image: "/sales_agent_dark.webp",
     pageUrl: createPageUrl('AISalesAssistant')
   },
   {
@@ -60,7 +60,7 @@ const solutions = [
       "Full setup, testing, and support handled for you"
     ],
     ctas: [{ text: "Discuss Your LLM Needs", primary: true }],
-    image: "/llm_pipelines_light.png",
+    image: "/llm_pipelines_light.webp",
     pageUrl: createPageUrl('CustomLLM')
   },
   {
@@ -75,7 +75,7 @@ const solutions = [
       "Executive AI Strategy Sessions",
     ],
     ctas: [{ text: "Explore Training Options", primary: true }],
-    image: "/staff_training_program_dark.png", 
+    image: "/staff_training_program_dark.webp",
     pageUrl: createPageUrl('StaffTrainingProgram')
   },
   {
@@ -90,7 +90,7 @@ const solutions = [
       "Controlled architecture with granular access controls and SSO integration"
     ],
     ctas: [{ text: "Request Private Access", primary: true }],
-    image: "/ai-assistant2.png",
+    image: "/ai-assistant2.webp",
     pageUrl: createPageUrl('AIAssistant')
   },
   {

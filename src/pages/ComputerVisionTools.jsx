@@ -76,7 +76,7 @@ export default function ComputerVisionTools() {
             
             <div className="relative hidden lg:block">
               <img 
-                src="/computer_vision_tools_light.png"
+                src="/computer_vision_tools_light.webp"
                 alt="Computer Vision Tools"
                 className="w-full h-auto rounded-2xl"
               />

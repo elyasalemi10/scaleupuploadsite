@@ -27,7 +27,7 @@ const expertiseAreas = [
         "AI Strategy & Roadmapping",
     ],
 
-    image: "/mohamad.png"
+    image: "/mohamad.webp"
   },
   {
     icon: Shield,
@@ -41,7 +41,7 @@ const expertiseAreas = [
         "Helps shape market entry plans with AI-driven insights",
     ],
 
-    image: "/abdullah.png"
+    image: "/abdullah.webp"
   },
   {
     icon: BookOpen,
@@ -55,7 +55,7 @@ const expertiseAreas = [
         "Strengthens competitive resilience through innovation",
     ],
 
-    image: "/baqir.png"
+    image: "/baqir.webp"
   },
   {
     icon: Settings,
@@ -69,7 +69,7 @@ const expertiseAreas = [
         "Skilled in edge computing",
     ],
 
-    image: "/santhakumar.png"
+    image: "/santhakumar.webp"
   },
   {
     icon: Award,
@@ -83,7 +83,7 @@ const expertiseAreas = [
         "Web development",
     ],
 
-    image: "/elyas.png"
+    image: "/elyas.webp"
   }
 ];
 

@@ -123,7 +123,7 @@ export default function AIAssistant() {
             
             <div className="relative hidden lg:block">
               <img 
-                src="/ai-assistant2.png"
+                src="/ai-assistant2.webp"
                 alt="AI Assistant Dashboard"
                 className="w-full h-auto rounded-2xl shadow-lg"
               />
@@ -187,7 +187,7 @@ export default function AIAssistant() {
             viewport={{ once: true }}
           >
             <img 
-              src="/ai-assistant3.png"
+              src="/ai-assistant3.webp"
               alt="AI Assistant Security Architecture"
               className="w-full h-auto rounded-2xl shadow-2xl"
             />
@@ -255,7 +255,7 @@ export default function AIAssistant() {
             viewport={{ once: true }}
           >
             <img 
-              src="/ai-assistant.png"
+              src="/ai-assistant.webp"
               alt="AI Assistant Analytics"
               className="w-full h-auto rounded-2xl shadow-lg"
             />

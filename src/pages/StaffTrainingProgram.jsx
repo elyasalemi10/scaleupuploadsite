@@ -77,7 +77,7 @@ export default function StaffTrainingProgram() {
             
             <div className="relative hidden lg:block">
               <img 
-                src="/staff_training_program_light.png"
+                src="/staff_training_program_light.webp"
                 alt="Staff Training Program"
                 className="w-full h-auto rounded-2xl"
               />
