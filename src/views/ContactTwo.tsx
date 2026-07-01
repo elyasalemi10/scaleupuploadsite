@@ -301,8 +301,9 @@ export default function ContactTwo() {
           </motion.div>
 
           <div className="grid items-start gap-8 lg:grid-cols-2">
-            {/* Contact info */}
+            {/* Contact info (below the form on mobile, left column on desktop) */}
             <motion.div
+              className="order-2 lg:order-1"
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
