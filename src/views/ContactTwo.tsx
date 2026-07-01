@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Clock, Send, Check, CheckCircle, AlertCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, Check, Copy, CheckCircle, AlertCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -27,9 +27,8 @@ const T: Record<Lang, Record<string, string>> = {
     heroTitle: '用人工智能实现规模化增长',
     heroSubtitle: '企业级人工智能咨询与解决方案',
     idiom: '安居乐业',
-    wechatButton: '通过微信联系我们',
     wechatIdLabel: '微信号',
-    wechatHint: '点按复制',
+    wechatCopyLabel: '点击复制微信号',
     wechatCopied: '已复制',
     aboutTitle: '关于我们',
     aboutBody:
@@ -58,9 +57,8 @@ const T: Record<Lang, Record<string, string>> = {
     heroTitle: '用人工智慧實現規模化增長',
     heroSubtitle: '企業級人工智慧諮詢與解決方案',
     idiom: '安居樂業',
-    wechatButton: '透過微信聯絡我們',
     wechatIdLabel: '微信號',
-    wechatHint: '點按複製',
+    wechatCopyLabel: '點擊複製微信號',
     wechatCopied: '已複製',
     aboutTitle: '關於我們',
     aboutBody:
@@ -89,9 +87,8 @@ const T: Record<Lang, Record<string, string>> = {
     heroTitle: 'Scale Up with AI',
     heroSubtitle: 'Enterprise AI Consulting & Solutions',
     idiom: 'Live and work in peace and contentment',
-    wechatButton: 'Contact us on WeChat',
     wechatIdLabel: 'WeChat ID',
-    wechatHint: 'Tap to copy',
+    wechatCopyLabel: 'Click to copy WeChat ID',
     wechatCopied: 'Copied',
     aboutTitle: 'Who We Are',
     aboutBody:
@@ -122,7 +119,7 @@ const T: Record<Lang, Record<string, string>> = {
 const PHONE_DISPLAY = '03 9001 7788';
 const PHONE_TEL = '+61390017788';
 const EMAIL = 'info@scaleupwithai.ai';
-const WECHAT_ID = 'wxid_qds6ife24wdo12';
+const WECHAT_ID = 'elyasalemi';
 
 const isEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
 
@@ -300,63 +297,38 @@ export default function ContactTwo() {
             <p className="text-lg leading-relaxed text-gray-600">{t.aboutBody}</p>
           </motion.div>
 
-          <div className="grid items-start gap-8 lg:grid-cols-2">
-            {/* Contact info (below the form on mobile, left column on desktop) */}
+          <div className="mx-auto max-w-2xl space-y-8">
+            {/* Contact us form */}
             <motion.div
-              className="order-2 lg:order-1"
-              initial={{ opacity: 0, x: -24 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full border-gray-200 bg-white shadow-lg">
-                <CardContent className="p-8">
-                  <h3 className="mb-6 text-2xl font-bold text-gray-900">{t.contactTitle}</h3>
-                  <div className="space-y-5">
-                    <InfoRow icon={<Phone className="h-6 w-6 text-blue-600" />} label={t.phoneLabel} value={PHONE_DISPLAY} href={`tel:${PHONE_TEL}`} />
-                    <InfoRow icon={<Mail className="h-6 w-6 text-blue-600" />} label={t.emailLabel} value={EMAIL} href={`mailto:${EMAIL}`} />
-                    <InfoRow icon={<MapPin className="h-6 w-6 text-blue-600" />} label={t.addressLabel} value={t.addressValue} />
-                    <InfoRow icon={<Clock className="h-6 w-6 text-blue-600" />} label={t.hoursLabel} value={t.hoursValue} />
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Lead capture */}
-            <motion.div
-              initial={{ opacity: 0, x: 24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <Card className="h-full border-gray-200 bg-white shadow-lg">
+              <Card className="border-gray-200 bg-white shadow-lg">
                 <CardContent className="p-8">
                   <h3 className="mb-1 text-2xl font-bold text-gray-900">{t.formTitle}</h3>
                   <p className="mb-6 text-sm text-gray-500">{t.formSubtitle}</p>
 
-                  {/* WeChat: solid green button that opens the WeChat app */}
-                  <a
-                    href="weixin://"
-                    onClick={copyWechat}
-                    aria-label={t.wechatButton}
-                    className="flex w-full items-center justify-center rounded-lg bg-[#07C160] px-6 py-3.5 shadow-md transition hover:bg-[#06AD56] active:scale-[0.99]"
-                  >
-                    <img src="/wechat-icon.png" alt="WeChat" className="h-7 w-auto object-contain" />
-                  </a>
+                  {/* WeChat: click to copy the WeChat ID */}
                   <button
                     type="button"
                     onClick={copyWechat}
-                    className="mt-2 flex w-full items-center justify-center gap-1.5 text-xs text-gray-500 transition-colors hover:text-gray-700"
+                    className="flex w-full items-center gap-3 rounded-lg border border-gray-200 bg-white px-4 py-3 text-left transition-colors hover:bg-gray-50"
                   >
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#07C160]">
+                      <img src="/wechat-icon.png" alt="WeChat" className="h-5 w-5 object-contain" />
+                    </span>
+                    <div className="min-w-0 flex-1">
+                      <div className="truncate text-sm font-semibold text-gray-900">
+                        {t.wechatIdLabel}: {WECHAT_ID}
+                      </div>
+                      <div className="text-xs text-gray-500">{copied ? t.wechatCopied : t.wechatCopyLabel}</div>
+                    </div>
                     {copied ? (
-                      <span className="flex items-center gap-1 text-green-600">
-                        <Check className="h-3.5 w-3.5" />
-                        {t.wechatCopied}
-                      </span>
+                      <Check className="h-4 w-4 shrink-0 text-green-600" />
                     ) : (
-                      <span>
-                        {t.wechatIdLabel}: {WECHAT_ID} · {t.wechatHint}
-                      </span>
+                      <Copy className="h-4 w-4 shrink-0 text-gray-400" />
                     )}
                   </button>
 
@@ -419,6 +391,26 @@ export default function ContactTwo() {
                       </button>
                     </form>
                   )}
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Contact info (below the form) */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <Card className="border-gray-200 bg-white shadow-lg">
+                <CardContent className="p-8">
+                  <h3 className="mb-6 text-2xl font-bold text-gray-900">{t.contactTitle}</h3>
+                  <div className="space-y-5">
+                    <InfoRow icon={<Phone className="h-6 w-6 text-blue-600" />} label={t.phoneLabel} value={PHONE_DISPLAY} href={`tel:${PHONE_TEL}`} />
+                    <InfoRow icon={<Mail className="h-6 w-6 text-blue-600" />} label={t.emailLabel} value={EMAIL} href={`mailto:${EMAIL}`} />
+                    <InfoRow icon={<MapPin className="h-6 w-6 text-blue-600" />} label={t.addressLabel} value={t.addressValue} />
+                    <InfoRow icon={<Clock className="h-6 w-6 text-blue-600" />} label={t.hoursLabel} value={t.hoursValue} />
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>
