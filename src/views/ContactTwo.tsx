@@ -283,6 +283,36 @@ export default function ContactTwo() {
       {/* Content */}
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-5xl px-6">
+          {/* WeChat: click to copy the WeChat ID (top of content) */}
+          <motion.div
+            className="mx-auto mb-10 max-w-2xl"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <button
+              type="button"
+              onClick={copyWechat}
+              className="flex w-full items-center gap-3 rounded-xl border border-gray-200 bg-white px-5 py-4 text-left shadow-sm transition-colors hover:bg-gray-50"
+            >
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#07C160]">
+                <img src="/wechat-icon.png" alt="WeChat" className="h-6 w-6 object-contain" />
+              </span>
+              <div className="min-w-0 flex-1">
+                <div className="truncate text-base font-semibold text-gray-900">
+                  {t.wechatIdLabel}: {WECHAT_ID}
+                </div>
+                <div className="text-sm text-gray-500">{copied ? t.wechatCopied : t.wechatCopyLabel}</div>
+              </div>
+              {copied ? (
+                <Check className="h-5 w-5 shrink-0 text-green-600" />
+              ) : (
+                <Copy className="h-5 w-5 shrink-0 text-gray-400" />
+              )}
+            </button>
+          </motion.div>
+
           {/* About */}
           <motion.div
             className="mx-auto mb-14 max-w-3xl text-center"
@@ -309,35 +339,6 @@ export default function ContactTwo() {
                 <CardContent className="p-8">
                   <h3 className="mb-1 text-2xl font-bold text-gray-900">{t.formTitle}</h3>
                   <p className="mb-6 text-sm text-gray-500">{t.formSubtitle}</p>
-
-                  {/* WeChat: click to copy the WeChat ID */}
-                  <button
-                    type="button"
-                    onClick={copyWechat}
-                    className="flex w-full items-center gap-3 rounded-lg border border-gray-200 bg-white px-4 py-3 text-left transition-colors hover:bg-gray-50"
-                  >
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#07C160]">
-                      <img src="/wechat-icon.png" alt="WeChat" className="h-5 w-5 object-contain" />
-                    </span>
-                    <div className="min-w-0 flex-1">
-                      <div className="truncate text-sm font-semibold text-gray-900">
-                        {t.wechatIdLabel}: {WECHAT_ID}
-                      </div>
-                      <div className="text-xs text-gray-500">{copied ? t.wechatCopied : t.wechatCopyLabel}</div>
-                    </div>
-                    {copied ? (
-                      <Check className="h-4 w-4 shrink-0 text-green-600" />
-                    ) : (
-                      <Copy className="h-4 w-4 shrink-0 text-gray-400" />
-                    )}
-                  </button>
-
-                  {/* divider */}
-                  <div className="my-6 flex items-center gap-3 text-xs uppercase text-gray-400">
-                    <span className="h-px flex-1 bg-gray-200" />
-                    {t.orLabel}
-                    <span className="h-px flex-1 bg-gray-200" />
-                  </div>
 
                   {status === 'success' ? (
                     <motion.div
