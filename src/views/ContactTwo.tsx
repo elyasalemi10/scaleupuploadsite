@@ -277,24 +277,18 @@ export default function ContactTwo() {
             <div className="mx-auto mb-3 h-px w-14 bg-amber-400/50" />
             <p className="text-base font-medium tracking-wide text-amber-200/90">{t.idiom}</p>
           </motion.div>
-        </div>
-      </section>
 
-      {/* Content */}
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-5xl px-6">
-          {/* WeChat: click to copy the WeChat ID (top of content) */}
+          {/* WeChat: click to copy the WeChat ID (visible on landing, under the idiom) */}
           <motion.div
-            className="mx-auto mb-10 max-w-2xl"
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.25 }}
+            className="mx-auto mt-8 max-w-sm"
           >
             <button
               type="button"
               onClick={copyWechat}
-              className="flex w-full items-center gap-3 rounded-xl border border-gray-200 bg-white px-5 py-4 text-left shadow-sm transition-colors hover:bg-gray-50"
+              className="flex w-full items-center gap-3 rounded-xl border border-white/15 bg-white/95 px-5 py-4 text-left shadow-lg transition-colors hover:bg-white"
             >
               <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#07C160]">
                 <img src="/wechat-icon.png" alt="WeChat" className="h-6 w-6 object-contain" />
@@ -312,7 +306,12 @@ export default function ContactTwo() {
               )}
             </button>
           </motion.div>
+        </div>
+      </section>
 
+      {/* Content */}
+      <section className="py-16 md:py-24">
+        <div className="mx-auto max-w-5xl px-6">
           {/* About */}
           <motion.div
             className="mx-auto mb-14 max-w-3xl text-center"
