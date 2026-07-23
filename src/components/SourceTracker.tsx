@@ -1,11 +1,12 @@
 'use client';
 
 import { useEffect } from 'react';
+import { captureAttribution } from '@/lib/attribution';
 
 /**
- * Catches visits that arrive on a plain ?utm_source= link rather than through
- * /go/<client>, emails a notification once, then tidies the tracking params
- * out of the URL.
+ * Records where the visit came from (for the contact form to report later),
+ * emails a notification when the visit is from a tagged link, then tidies the
+ * tracking params out of the URL.
  *
  * Reads window.location directly instead of useSearchParams so the component
  * doesn't need a Suspense boundary and doesn't opt pages into dynamic rendering.
@@ -45,6 +46,10 @@ function cleanUrl(params: URLSearchParams) {
 
 export default function SourceTracker() {
   useEffect(() => {
+    // Must run before cleanUrl() strips the params it reads. Also fires on
+    // untagged visits so a plain Google referral still gets recorded.
+    captureAttribution();
+
     const params = new URLSearchParams(window.location.search);
     // Accept ?source= too, in case a badge went out without proper UTM naming.
     const source = params.get('utm_source') || params.get('source');

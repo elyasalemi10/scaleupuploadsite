@@ -1,4 +1,5 @@
 import { Resend } from 'resend';
+import { escapeHtml } from './escape-html';
 
 /**
  * Sends an email whenever someone lands on the site from a tagged link
@@ -60,12 +61,7 @@ export function withinGlobalCap(): boolean {
 /** Keeps untrusted query/header values from breaking out into the email HTML. */
 function esc(value: string | null | undefined, fallback = 'Not provided'): string {
   if (!value) return fallback;
-  return value
-    .slice(0, 300)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
+  return escapeHtml(value.slice(0, 300));
 }
 
 export type VisitAlert = {
