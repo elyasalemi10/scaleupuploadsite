@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import SourceTracker from '../src/components/SourceTracker';
 import '../src/index.css';
 
 export const metadata: Metadata = {
@@ -34,7 +35,10 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
       </head>
-      <body>{children}</body>
+      <body>
+        <SourceTracker />
+        {children}
+      </body>
     </html>
   );
 }
